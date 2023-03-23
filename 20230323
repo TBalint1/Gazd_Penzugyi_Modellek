@@ -1,0 +1,169 @@
+
+R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> n=10000
+> a=65539
+> m=2^31
+> x=vector();y=vector();z=vector()
+> x0=507
+> for (i in 1:n){
++ if (i>1) {x[i]=(a*z[i-1]%%m} else {x[i]=(a*x0)%%m}
+Error: unexpected '}' in:
+"for (i in 1:n){
+if (i>1) {x[i]=(a*z[i-1]%%m}"
+> for (i in 1:n){
++ if (i>1) {x[i]=(a*z[i-1])%%m} else {x[i]=(a*x0)%%m}
++ y[i]=(a*x[i])%%m
++ z[i]=(a*y[i])%%m
++ }
+> 
+> xi=x/m
+> eta=y/m
+> zeta=z/m
+> 
+> plot(xi,eta)
+> 
+> #scatterplot3d
+> scatterplot3d(xi,eta,zeta, highlight.3d = TRUE, col. axis = "blue",angle=120,col.grid = "lightblue" , main = "RANDU" , type="1")
+Error: unexpected symbol in "scatterplot3d(xi,eta,zeta, highlight.3d = TRUE, col. axis"
+> scatterplot3d(xi,eta,zeta, highlight.3d = TRUE, col.axis = "blue",angle=120,col.grid = "lightblue" , main = "RANDU" , type="1")
+Error in scatterplot3d(xi, eta, zeta, highlight.3d = TRUE, col.axis = "blue",  : 
+  could not find function "scatterplot3d"
+> install(scatterplot3d)
+Error in install(scatterplot3d) : could not find function "install"
+> install.packages("scatterplot3d")
+Warning in install.packages("scatterplot3d") :
+  'lib = "C:/Program Files/R/R-4.2.1/library"' is not writable
+--- Please select a CRAN mirror for use in this session ---
+trying URL 'https://cran.rapporter.net/bin/windows/contrib/4.2/scatterplot3d_0.3-43.zip'
+Content type 'application/zip' length 360997 bytes (352 KB)
+downloaded 352 KB
+
+package ‘scatterplot3d’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\Diak\AppData\Local\Temp\RtmpMxpobg\downloaded_packages
+> library("scatterplot3d")
+Warning message:
+package ‘scatterplot3d’ was built under R version 4.2.2 
+> scatterplot3d(xi,eta,zeta, highlight.3d = TRUE, col.axis = "blue",angle=120,col.grid = "lightblue" , main = "RANDU" , type="1")
+Error in plot.xy(xy.coords(x, y), type = type, ...) : 
+  invalid plot type '1'
+> scatterplot3d(xi,eta,zeta, highlight.3d = TRUE, col.axis = "blue",angle=120,col.grid = "lightblue" , main = "RANDU")
+> scatterplot3d(xi,eta,zeta, highlight.3d = TRUE, col.axis = "blue",angle=155,col.grid = "lightblue" , main = "RANDU")
+> scatterplot3d(xi,eta,zeta, highlight.3d = TRUE, col.axis = "blue",angle=155,col.grid = "lightblue" , main = "RANDU",pch=20)
+> 
+> set.seed(101);x=0.2*qgamma(runif(100),1.2)
+> hist(x, col="green")
+> a=c(0,0.5,1.5,3.5,6,20)
+> p=vector()
+> for(i in 1:(length(a)-1)) nu[i]=table(x.cut)[[i]]
+Error in table(x.cut) : object 'x.cut' not found
+> for(i in 1:(length(a)-1)) p[i]=pexp(a[i+1])-pexp(a[i])
+> p
+[1] 0.39346934 0.38340050 0.19293278 0.02771863 0.00247875
+> np=length(x)*p
+> np
+[1] 39.346934 38.340050 19.293278  2.771863  0.247875
+> x.cut=cut(x/mean(x),breaks=a)
+> x.cut
+  [1] (0,0.5]   (0,0.5]   (0.5,1.5] (0.5,1.5] (0,0.5]   (0,0.5]   (0.5,1.5] (0,0.5]   (0.5,1.5] (0.5,1.5]
+ [11] (1.5,3.5] (0.5,1.5] (0.5,1.5] (1.5,3.5] (0.5,1.5] (0.5,1.5] (1.5,3.5] (0,0.5]   (0.5,1.5] (0,0.5]  
+ [21] (0.5,1.5] (1.5,3.5] (0,0.5]   (0.5,1.5] (1.5,3.5] (0.5,1.5] (0,0.5]   (0.5,1.5] (0.5,1.5] (0.5,1.5]
+ [31] (0.5,1.5] (0,0.5]   (0,0.5]   (0,0.5]   (0.5,1.5] (1.5,3.5] (0,0.5]   (1.5,3.5] (0,0.5]   (1.5,3.5]
+ [41] (0.5,1.5] (0.5,1.5] (0.5,1.5] (0,0.5]   (0.5,1.5] (0,0.5]   (0,0.5]   (1.5,3.5] (0.5,1.5] (0,0.5]  
+ [51] (0,0.5]   (0.5,1.5] (0.5,1.5] (0.5,1.5] (0.5,1.5] (0.5,1.5] (0.5,1.5] (0.5,1.5] (0.5,1.5] (0.5,1.5]
+ [61] (1.5,3.5] (1.5,3.5] (0.5,1.5] (3.5,6]   (1.5,3.5] (0.5,1.5] (0,0.5]   (0,0.5]   (1.5,3.5] (1.5,3.5]
+ [71] (0,0.5]   (1.5,3.5] (0.5,1.5] (1.5,3.5] (1.5,3.5] (0,0.5]   (0,0.5]   (0,0.5]   (0.5,1.5] (1.5,3.5]
+ [81] (0.5,1.5] (0.5,1.5] (0.5,1.5] (3.5,6]   (0,0.5]   (1.5,3.5] (0,0.5]   (0.5,1.5] (0,0.5]   (0,0.5]  
+ [91] (0.5,1.5] (1.5,3.5] (0.5,1.5] (0,0.5]   (0,0.5]   (1.5,3.5] (0.5,1.5] (0,0.5]   (0,0.5]   (0,0.5]  
+Levels: (0,0.5] (0.5,1.5] (1.5,3.5] (3.5,6] (6,20]
+> nu=vector()
+> for(i in 1:(length(a)-1)) nu[i]=table(x.cut)[[i]]
+> nu
+[1] 34 43 21  2  0
+> chi2.x=sum((nu-cp)^2/np)
+Error: object 'cp' not found
+> chi2.x=sum((nu-np)^2/np)
+> chi2.x
+[1] 1.906779
+> cat("p=",1-pchisq(chi2.x,length(a)-3),"\n")
+p= 0.5919786 
+> 
+> k=5
+> p=seq(from=0, to=1,1/k)
+> p
+[1] 0.0 0.2 0.4 0.6 0.8 1.0
+> a=qexp(p)
+> a
+[1] 0.0000000 0.2231436 0.5108256 0.9162907 1.6094379       Inf
+> np=vector()
+> for (i in 1:(length(a)-1)) np[i]=1/k
+> np=np*length(x)
+> np
+[1] 20 20 20 20 20
+> chi2.x=sum((nu-np)^2/np)
+> chi2.x
+[1] 72.5
+> cat("p=",1-pchisq(chi2.x,length(a)-3,"\n")
++ 
++ 
++ 
++ )
+Error in pchisq(chi2.x, length(a) - 3, "\n") : 
+  Non-numeric argument to mathematical function
+> cat("p=",1-pchisq(chi2.x,length(a)-3),"\n")
+p= 1.221245e-15 
+> x.cut=cut(x/mean(x),breaks=a)
+> x.cut
+  [1] (0.223,0.511] (0,0.223]     (0.916,1.61]  (0.916,1.61]  (0.223,0.511] (0.223,0.511] (0.511,0.916]
+  [8] (0.223,0.511] (0.916,1.61]  (0.511,0.916] (1.61,Inf]    (0.916,1.61]  (0.916,1.61]  (1.61,Inf]   
+ [15] (0.511,0.916] (0.511,0.916] (0.916,1.61]  (0.223,0.511] (0.511,0.916] (0,0.223]     (0.916,1.61] 
+ [22] (1.61,Inf]    (0.223,0.511] (0.916,1.61]  (1.61,Inf]    (0.916,1.61]  (0,0.223]     (0.511,0.916]
+ [29] (0.511,0.916] (0.916,1.61]  (0.511,0.916] (0.223,0.511] (0.223,0.511] (0,0.223]     (0.511,0.916]
+ [36] (1.61,Inf]    (0.223,0.511] (0.916,1.61]  (0,0.223]     (1.61,Inf]    (0.511,0.916] (0.511,0.916]
+ [43] (0.916,1.61]  (0.223,0.511] (0.511,0.916] (0.223,0.511] (0,0.223]     (1.61,Inf]    (0.916,1.61] 
+ [50] (0,0.223]     (0,0.223]     (0.511,0.916] (0.916,1.61]  (0.916,1.61]  (0.511,0.916] (0.916,1.61] 
+ [57] (0.916,1.61]  (0.511,0.916] (0.916,1.61]  (0.511,0.916] (0.916,1.61]  (0.916,1.61]  (0.916,1.61] 
+ [64] (1.61,Inf]    (1.61,Inf]    (0.916,1.61]  (0,0.223]     (0.223,0.511] (1.61,Inf]    (1.61,Inf]   
+ [71] (0.223,0.511] (1.61,Inf]    (0.511,0.916] (1.61,Inf]    (0.916,1.61]  (0.223,0.511] (0,0.223]    
+ [78] (0.223,0.511] (0.916,1.61]  (1.61,Inf]    (0.916,1.61]  (0.916,1.61]  (0.916,1.61]  (1.61,Inf]   
+ [85] (0,0.223]     (1.61,Inf]    (0.223,0.511] (0.511,0.916] (0,0.223]     (0,0.223]     (0.916,1.61] 
+ [92] (1.61,Inf]    (0.916,1.61]  (0.223,0.511] (0.223,0.511] (1.61,Inf]    (0.223,0.511] (0.223,0.511]
+ [99] (0,0.223]     (0,0.223]    
+Levels: (0,0.223] (0.223,0.511] (0.511,0.916] (0.916,1.61] (1.61,Inf]
+> np=vector()
+> for (i in 1:(length(a)-1)) np[i]=1/k
+> nu=vector()
+> for (i in 1:(length(a)-1)) nu[i]=table(x.cut)[[i]]
+> nu
+[1] 15 20 18 29 18
+> chi2.x=sum((nu-np)^2/np)
+> chi2.x
+[1] 10371
+> np=vector()
+> for (i in 1:(length(a)-1)) np[i]=1/k
+> np=np*length(x)
+> np
+[1] 20 20 20 20 20
+> chi2.x=sum((nu-np)^2/np)
+> chi2.x
+[1] 5.7
+> cat("p=",1-pchisq(chi2.x,length(a)-3),"\n")
+p= 0.1271539 
+> save.image("C:\\Users\\Diak\\Documents\\20230323")
+> 
