@@ -1,0 +1,90 @@
+
+R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> k=c(92,108,91,98,100,111)
+> k
+[1]  92 108  91  98 100 111
+> p=c((1/6),(1/6),(1/6),(1/6),(1/6),(1/6))
+> p
+[1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667
+> kszi<-function(k,p)
++ }
+Error: unexpected '}' in:
+"kszi<-function(k,p)
+}"
+> kszi<-function(k,p) {
++ L=0
++ for(i in 1:length(k)) {L=L+k[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+(((k[j]-L*p[j])^2)/(L*p[j]))}
++ if(S<11.1) {return("Elfogadjuk")}
++ else{return("Nem fogadjuk el")}
++ }
+> kszi(k,p)
+[1] "Elfogadjuk"
+> f=c(51,43,38,56,50)
+> k=c(32,38,42,51,58)
+> f
+[1] 51 43 38 56 50
+> k
+[1] 32 38 42 51 58
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(f)) {m=m+k[i] ; n=n+f[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+((((f[j]/n)-(k[j]/m))^2)/(f[j]+k[j]))}
++ return(S)
++ }
+> vmi(f,k)
+[1] 9.623162e-05
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(f)) {m=m+k[i] ; n=n+f[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+((((f[j]/n)-(k[j]/m))^2)/(f[j]+k[j]))}
++ if(S<11.1) {return("Elfogadjuk")}
++ else{return("Nem fogadjuk el")}
++ }
+> vmi(k,f)
+[1] "Elfogadjuk"
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(f)) {m=m+k[i] ; n=n+f[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+((((f[j]/n)-(k[j]/m))^2)/(f[j]+k[j]))}
++ if(S<11.1) {return("Elfogadjuk" S)}
+Error: unexpected symbol in:
+"for(j in 1:length(k)) {S=S+((((f[j]/n)-(k[j]/m))^2)/(f[j]+k[j]))}
+if(S<11.1) {return("Elfogadjuk" S"
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(f)) {m=m+k[i] ; n=n+f[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+((((f[j]/n)-(k[j]/m))^2)/(f[j]+k[j]))}
++ if(S<11.1) {return("Elfogadjuk",S)}
++ else{return("Nem fogadjuk el",S)}
++ }
+> vmi(k,f)
+Error in return("Elfogadjuk", S) : 
+  multi-argument returns are not permitted
+> 

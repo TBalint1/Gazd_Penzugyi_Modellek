@@ -1,0 +1,161 @@
+
+R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> k = [92;108;91;98;100;111]
+Error: unexpected '[' in "k = ["
+> k=C[92;108;91;98;100;111]
+Error: unexpected ';' in "k=C[92;"
+> k=c(92;108;91;98;100;111)
+Error: unexpected ';' in "k=c(92;"
+> k=c(92,108,91,98,100,111)
+> k
+[1]  92 108  91  98 100 111
+> N = 600
+> S = 0
+> for(i in 1:length(k){
+Error: unexpected '{' in "for(i in 1:length(k){"
+> for(i in 1:length(k)
++ S= S + ((k(i)-100)^2)/100
+Error: unexpected symbol in:
+"for(i in 1:length(k)
+S"
+> S= S + ((k[i]-100)^2)/100
+> S = 0
+> for(i in 1:length(k)
++ S= S + ((k[i]-100)^2)/100
+Error: unexpected symbol in:
+"for(i in 1:length(k)
+S"
+> for(i in 1:length(k)
++ S=S+((k[i]-100)^2)/100
+Error: unexpected symbol in:
+"for(i in 1:length(k)
+S"
+> for(i in 1:length(k) S=S+(((k[i]-100)^2)/100)
+Error: unexpected symbol in "for(i in 1:length(k) S"
+> for(i in 1:length(k) S=S+(((k[i]-100)^2)/100)
+Error: unexpected symbol in "for(i in 1:length(k) S"
+> for(i in 1:length(k) S=S+(((k[i]-100)^2)/100)
+Error: unexpected symbol in "for(i in 1:length(k) S"
+> k
+[1]  92 108  91  98 100 111
+> for(i in 1:length(k)) {S=S+(((k[i]-100)^2)/100)}
+> S
+[1] 3.34
+> p=c((1/6),(1/6),(1/6),(1/6),(1/6),(1/6))
+> p
+[1] 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667 0.1666667
+> kszi<-function(k,p)
++ L=0
+> kszi<-function(k,p)
++ L=0
+> for(i in 1:length(k) {L=L+k[i]}
+Error: unexpected '{' in "for(i in 1:length(k) {"
+> for(i in 1:length(k)) {L=L+k[i]}
+Error in L : object 'L' not found
+> kszi<-function(k,p)
++ L=0
+> for(i in 1:length(k)) {L=L+k[i]}
+Error in L : object 'L' not found
+> kszi<-function(k,p) {
++ L=0
++ for(i in 1:length(k)) {L=L+k[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+(((k[j]-L*p[j])^2)/(L*p[j])}
+Error: unexpected '}' in:
+"S=0
+for(j in 1:length(k)) {S=S+(((k[j]-L*p[j])^2)/(L*p[j])}"
+> for(j in 1:length(k)) {S=S+(((k[j]-L*p[j])^2)/(L*p[j]))}
+Error in L : object 'L' not found
+> kszi<-function(k,p) {
++ L=0
++ for(i in 1:length(k)) {L=L+k[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+(((k[j]-L*p[j])^2)/(L*p[j]))}
++ if(S<11.1) {return("Elfogadjuk")}
++ else{return("Nem fogadjuk el")}
++ }
+> kszi(k,p)
+[1] "Elfogadjuk"
+> k=c(114,103,89,95,105,100)
+> kszi(k,p)
+[1] "Elfogadjuk"
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(k)) {m=m+k[i] , n=n+f[i]}
+Error: unexpected ',' in:
+"n=0
+for(i in 1:length(k)) {m=m+k[i] ,"
+> vmi<-function(f,k) {
++ n=0
++ m=0
++ for(i in 1:length(k)) {m=m+k[i] ; n=n+f[i]}
++ m
++ vmi<-function(f,k) {
++ for(i in 1:length(k)) {m=m+k[i] ; n=n+f[i]}
++ vmi<-function(f,k) {
++ 
++ }
++ vmi<-function(f,k) {
++ for(i in 1:length(k)) {m=m+k[i] ; n=n+f[i]}
++ for(i in 1:length(k)) {m=m+k[i] , n=n+f[i]}
+Error: unexpected ',' in:
+"for(i in 1:length(k)) {m=m+k[i] ; n=n+f[i]}
+for(i in 1:length(k)) {m=m+k[i] ,"
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(k)) {m=m+k[i] ; n=n+f[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+((((f[j]/n)-(k[i]/m))^2)/(f[i]+k[i]))}
++ }
+> f=c(51,43,38,56,50)
+> k=c(32,38,42,51,58)
+> d
+Error: object 'd' not found
+> f
+[1] 51 43 38 56 50
+> k
+[1] 32 38 42 51 58
+> vmi(f,k)
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(k)) {m=m+k[i] ; n=n+f[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+((((f[j]/n)-(k[i]/m))^2)/(f[i]+k[i]))}
++ return(S)
++ }
+> vmi(f,k)
+[1] 0.0002134067
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(k)) {m=m+k[i] ; n=n+f[i]}
++ S=0
++ for(j in 1:length(k)) {S=S+((((f[j]/n)-(k[j]/m))^2)/(f[j]+k[j]))}
++ return(S)
++ }
+> vmi(f,k)
+[1] 9.623162e-05
+> vmi<-function(f,k) {
++ m=0
++ n=0
++ for(i in 1:length(f)) {m=m+k[i] ; n=n+f[i]}
